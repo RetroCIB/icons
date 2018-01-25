@@ -1,3 +1,5 @@
+/* Credit to https://github.com/encharm/Font-Awesome-SVG-PNG MIT */
+
 'use strict';
 
 let path = require('path');
@@ -6,7 +8,11 @@ let Promise = require("bluebird");
 let indexBy = require('lodash.indexby');
 let readFile = Promise.promisify(require("fs").readFile);
 let parseXml = Promise.promisify(require("xml2js").parseString);
+let mkdirp = require("mkdirp");
+let SVGO = require('svgo');
+let extend = require('extend');
 
+// getGlyphs
 function hexToDec(hex) {
   return parseInt(hex, 16);
 }
@@ -39,14 +45,24 @@ module.exports = function(dest, filename, options) {
   getGlyphs(`${dest}/${filename}.svg`).then(function(fontData) {
     // console.log(options.icons);
   	// console.info(data);
+    let icons = new Array();
     for (let i in options.icons) {
-      let str = String(options.icons[i].content).slice(1);
-      // console.log(options.icons[i].content)
-      console.info(hexToDec(str));
+      if (options.icons[i].content != undefined) {
+        let str = options.icons[i].content.slice(1);
+        for (let data in fontData) {
+          if (fontData[data] != undefined) {
+            if (hexToDec(str) == fontData[data].content) {
+              icons.push({
+                name: options.icons[i].name,
+                content: options.icons[i].content,
+                title: options.icons[i].title,
+                data: fontData[data].data
+              })
+            }
+          }
+        }
+      }
     }
-
-    // for (let data in fontData) {
-    //   console.info(fontData[data].content)
-    // }
+    return icons;
   });
 }
