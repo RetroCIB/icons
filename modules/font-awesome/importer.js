@@ -67,10 +67,10 @@ module.exports = function() {
   }).then(function(icons){
     options.icons = icons;
     options = prepareIcons(options);
-   generateCss(paths.dest, options.name, options);
-   generateJson(paths.dest, options.className, options);
-   copyFonts(paths.dest, paths.fonts, options);
-console.info(options.icons);
-  //  generateSvgs(paths.dest, options.name, options);
+    // generateCss(paths.dest, options.name, options);
+    // generateJson(paths.dest, options.className, options);
+    // copyFonts(paths.dest, paths.fonts, options);
+    // console.log(options.icons)
+    generateSvgs(paths.dest, options.name, options);
   });
 };

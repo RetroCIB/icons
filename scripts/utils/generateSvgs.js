@@ -7,6 +7,10 @@ let indexBy = require('lodash.indexby');
 let readFile = Promise.promisify(require("fs").readFile);
 let parseXml = Promise.promisify(require("xml2js").parseString);
 
+function hexToDec(hex) {
+  return parseInt(hex, 16);
+}
+
 function getGlyphs(file) {
   let SVG_FILE = require.resolve(file);
 
@@ -32,10 +36,17 @@ function getGlyphs(file) {
 }
 
 module.exports = function(dest, filename, options) {
-  getGlyphs(`${dest}/${filename}.svg`).then(function(data) {
+  getGlyphs(`${dest}/${filename}.svg`).then(function(fontData) {
+    // console.log(options.icons);
+  	// console.info(data);
+    for (let i in options.icons) {
+      let str = String(options.icons[i].content).slice(1);
+      // console.log(options.icons[i].content)
+      console.info(hexToDec(str));
+    }
 
-    console.info(options.icons);
-
-  	console.info(data);
+    // for (let data in fontData) {
+    //   console.info(fontData[data].content)
+    // }
   });
 }
