@@ -1,17 +1,17 @@
 {
   "version": "0.0.1",
-  "name": "@icon/dripicons",
+  "name": "@icon/evil-icons",
   "description": "TODO: fill in this description later",
   "author": "Creation Studio Limited",
   "license": "MIT",
   "style": "index.scss",
-  "repository": "https://github.com/thecreation/icons/tree/master/modules/dripicons",
+  "repository": "https://github.com/thecreation/icons/tree/master/modules/evil-icons",
   "bugs": {
     "url": "https://github.com/thecreation/icons/issues"
   },
   "scripts": {
-    "import": "../../scripts/module/import --module=dripicons",
-    "optimize": "../../scripts/module/optimize"
+    "import": "../../scripts/module/import --module=evil-icons",
+    "optimize": "../../scripts/module/optimize --module=evil-icons"
   },
   "keywords": [
     "icons",
