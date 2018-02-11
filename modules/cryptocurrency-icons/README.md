@@ -35,7 +35,7 @@ There are many ways/formats of how to use cryptocurrency-icons. The fastest and 
 
 ### Icons font – ideal when you want to include all icons at once
 
-  1. Install `@icon/cryptocurrency-icons` with this command. In the <head> of your html, reference the location to your `cryptocurrency-icons.css`.
+  1. Install `@icon/cryptocurrency-icons` with this command. In the `<head>` of your html, reference the location to your `cryptocurrency-icons.css`.
 
 ```
   <head>
@@ -55,7 +55,7 @@ There are many ways/formats of how to use cryptocurrency-icons. The fastest and 
   </head>
 ```
 
-  Place cryptocurrency-icons with <i> tag in your html like this. Icon class names are to be used with the `cryptocurrency-icons` class prefix.
+> Place cryptocurrency-icons with `<i>` tag in your html like this. Icon class names are to be used with the `cryptocurrency-icons` class prefix.
 
 ```
   <i class="cryptocurrency-icons cryptocurrency-icons-act"></i>
