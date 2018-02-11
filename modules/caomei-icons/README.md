@@ -35,7 +35,7 @@ There are many ways/formats of how to use caomei-icons. The fastest and recommen
 
 ### Icons font – ideal when you want to include all icons at once
 
-  1. Install `@icon/caomei-icons` with this command. In the <head> of your html, reference the location to your `caomei-icons.css`.
+  1. Install `@icon/caomei-icons` with this command. In the `<head>` of your html, reference the location to your `caomei-icons.css`.
 
 ```
   <head>
@@ -55,7 +55,7 @@ There are many ways/formats of how to use caomei-icons. The fastest and recommen
   </head>
 ```
 
-  Place caomei-icons with <i> tag in your html like this. Icon class names are to be used with the `czs` class prefix.
+  Place caomei-icons with `<i>` tag in your html like this. Icon class names are to be used with the `czs` class prefix.
 
 ```
   <i class="czs czs-caomei"></i>
