@@ -35,7 +35,7 @@ There are many ways/formats of how to use evil-icons. The fastest and recommende
 
 ### Icons font – ideal when you want to include all icons at once
 
-  1. Install `@icon/evil-icons` with this command. In the <head> of your html, reference the location to your `evil-icons.css`.
+  1. Install `@icon/evil-icons` with this command. In the `<head>` of your html, reference the location to your `evil-icons.css`.
 
 ```
   <head>
@@ -55,7 +55,7 @@ There are many ways/formats of how to use evil-icons. The fastest and recommende
   </head>
 ```
 
-  Place evil-icons with <i> tag in your html like this. Icon class names are to be used with the `evil-icons` class prefix.
+> Place evil-icons with `<i>` tag in your html like this. Icon class names are to be used with the `evil-icons` class prefix.
 
 ```
   <i class="evil-icons evil-icons-archive"></i>

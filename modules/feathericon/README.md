@@ -35,7 +35,7 @@ There are many ways/formats of how to use feathericon. The fastest and recommend
 
 ### Icons font – ideal when you want to include all icons at once
 
-  1. Install `@icon/feathericon` with this command. In the <head> of your html, reference the location to your `feathericon.css`.
+  1. Install `@icon/feathericon` with this command. In the `<head>` of your html, reference the location to your `feathericon.css`.
 
 ```
   <head>
@@ -55,7 +55,7 @@ There are many ways/formats of how to use feathericon. The fastest and recommend
   </head>
 ```
 
-  Place feathericon with <i> tag in your html like this. Icon class names are to be used with the `fei` class prefix.
+> Place feathericon with `<i>` tag in your html like this. Icon class names are to be used with the `fei` class prefix.
 
 ```
   <i class="fei fei-activity"></i>

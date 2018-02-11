@@ -35,7 +35,7 @@ There are many ways/formats of how to use gonzocons. The fastest and recommended
 
 ### Icons font – ideal when you want to include all icons at once
 
-  1. Install `@icon/gonzocons` with this command. In the <head> of your html, reference the location to your `gonzocons.css`.
+  1. Install `@icon/gonzocons` with this command. In the `<head>` of your html, reference the location to your `gonzocons.css`.
 
 ```
   <head>
@@ -55,7 +55,7 @@ There are many ways/formats of how to use gonzocons. The fastest and recommended
   </head>
 ```
 
-  Place gonzocons with <i> tag in your html like this. Icon class names are to be used with the `gon` class prefix.
+> Place gonzocons with `<i>` tag in your html like this. Icon class names are to be used with the `gon` class prefix.
 
 ```
   <i class="gon gon-antenna"></i>

@@ -35,7 +35,7 @@ There are many ways/formats of how to use elegant-icons. The fastest and recomme
 
 ### Icons font – ideal when you want to include all icons at once
 
-  1. Install `@icon/elegant-icons` with this command. In the <head> of your html, reference the location to your `elegant-icons.css`.
+  1. Install `@icon/elegant-icons` with this command. In the `<head>` of your html, reference the location to your `elegant-icons.css`.
 
 ```
   <head>
@@ -55,7 +55,7 @@ There are many ways/formats of how to use elegant-icons. The fastest and recomme
   </head>
 ```
 
-  Place elegant-icons with <i> tag in your html like this. Icon class names are to be used with the `ei` class prefix.
+> Place elegant-icons with `<i>` tag in your html like this. Icon class names are to be used with the `ei` class prefix.
 
 ```
   <i class="ei ei-arrow_up"></i>

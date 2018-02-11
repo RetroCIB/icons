@@ -55,7 +55,7 @@ There are many ways/formats of how to use caomei-icons. The fastest and recommen
   </head>
 ```
 
-  Place caomei-icons with `<i>` tag in your html like this. Icon class names are to be used with the `czs` class prefix.
+> Place caomei-icons with `<i>` tag in your html like this. Icon class names are to be used with the `czs` class prefix.
 
 ```
   <i class="czs czs-caomei"></i>

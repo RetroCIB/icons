@@ -35,7 +35,7 @@ There are many ways/formats of how to use open-iconic. The fastest and recommend
 
 ### Icons font – ideal when you want to include all icons at once
 
-  1. Install `@icon/open-iconic` with this command. In the <head> of your html, reference the location to your `open-iconic.css`.
+  1. Install `@icon/open-iconic` with this command. In the `<head>` of your html, reference the location to your `open-iconic.css`.
 
 ```
   <head>
@@ -55,7 +55,7 @@ There are many ways/formats of how to use open-iconic. The fastest and recommend
   </head>
 ```
 
-  Place open-iconic with <i> tag in your html like this. Icon class names are to be used with the `oi` class prefix.
+> Place open-iconic with `<i>` tag in your html like this. Icon class names are to be used with the `oi` class prefix.
 
 ```
   <i class="oi oi-account-login"></i>

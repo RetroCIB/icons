@@ -35,7 +35,7 @@ There are many ways/formats of how to use font-awesome. The fastest and recommen
 
 ### Icons font – ideal when you want to include all icons at once
 
-  1. Install `@icon/font-awesome` with this command. In the <head> of your html, reference the location to your `font-awesome.css`.
+  1. Install `@icon/font-awesome` with this command. In the `<head>` of your html, reference the location to your `font-awesome.css`.
 
 ```
   <head>
@@ -55,7 +55,7 @@ There are many ways/formats of how to use font-awesome. The fastest and recommen
   </head>
 ```
 
-  Place font-awesome with <i> tag in your html like this. Icon class names are to be used with the `fa` class prefix.
+> Place font-awesome with `<i>` tag in your html like this. Icon class names are to be used with the `fa` class prefix.
 
 ```
   <i class="fa fa-address-book"></i>

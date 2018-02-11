@@ -35,7 +35,7 @@ There are many ways/formats of how to use fontelico. The fastest and recommended
 
 ### Icons font – ideal when you want to include all icons at once
 
-  1. Install `@icon/fontelico` with this command. In the <head> of your html, reference the location to your `fontelico.css`.
+  1. Install `@icon/fontelico` with this command. In the `<head>` of your html, reference the location to your `fontelico.css`.
 
 ```
   <head>
@@ -55,7 +55,7 @@ There are many ways/formats of how to use fontelico. The fastest and recommended
   </head>
 ```
 
-  Place fontelico with <i> tag in your html like this. Icon class names are to be used with the `emo` class prefix.
+> Place fontelico with `<i>` tag in your html like this. Icon class names are to be used with the `emo` class prefix.
 
 ```
   <i class="emo emo-happy"></i>

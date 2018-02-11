@@ -35,7 +35,7 @@ There are many ways/formats of how to use hawcons-stroke. The fastest and recomm
 
 ### Icons font – ideal when you want to include all icons at once
 
-  1. Install `@icon/hawcons-stroke` with this command. In the <head> of your html, reference the location to your `hawcons-stroke.css`.
+  1. Install `@icon/hawcons-stroke` with this command. In the `<head>` of your html, reference the location to your `hawcons-stroke.css`.
 
 ```
   <head>
@@ -55,7 +55,7 @@ There are many ways/formats of how to use hawcons-stroke. The fastest and recomm
   </head>
 ```
 
-  Place hawcons-stroke with <i> tag in your html like this. Icon class names are to be used with the `hst` class prefix.
+> Place hawcons-stroke with `<i>` tag in your html like this. Icon class names are to be used with the `hst` class prefix.
 
 ```
   <i class="hst hst-bookmark"></i>

@@ -35,7 +35,7 @@ There are many ways/formats of how to use mfglabs-iconset. The fastest and recom
 
 ### Icons font – ideal when you want to include all icons at once
 
-  1. Install `@icon/mfglabs-iconset` with this command. In the <head> of your html, reference the location to your `mfglabs-iconset.css`.
+  1. Install `@icon/mfglabs-iconset` with this command. In the `<head>` of your html, reference the location to your `mfglabs-iconset.css`.
 
 ```
   <head>
@@ -55,7 +55,7 @@ There are many ways/formats of how to use mfglabs-iconset. The fastest and recom
   </head>
 ```
 
-  Place mfglabs-iconset with <i> tag in your html like this. Icon class names are to be used with the `mli` class prefix.
+> Place mfglabs-iconset with `<i>` tag in your html like this. Icon class names are to be used with the `mli` class prefix.
 
 ```
   <i class="mli mli-cloud"></i>

@@ -35,7 +35,7 @@ There are many ways/formats of how to use foundation-icons. The fastest and reco
 
 ### Icons font – ideal when you want to include all icons at once
 
-  1. Install `@icon/foundation-icons` with this command. In the <head> of your html, reference the location to your `foundation-icons.css`.
+  1. Install `@icon/foundation-icons` with this command. In the `<head>` of your html, reference the location to your `foundation-icons.css`.
 
 ```
   <head>
@@ -55,7 +55,7 @@ There are many ways/formats of how to use foundation-icons. The fastest and reco
   </head>
 ```
 
-  Place foundation-icons with <i> tag in your html like this. Icon class names are to be used with the `fi` class prefix.
+> Place foundation-icons with `<i>` tag in your html like this. Icon class names are to be used with the `fi` class prefix.
 
 ```
   <i class="fi fi-heart"></i>

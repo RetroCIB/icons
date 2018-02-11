@@ -35,7 +35,7 @@ There are many ways/formats of how to use entypo. The fastest and recommended wa
 
 ### Icons font – ideal when you want to include all icons at once
 
-  1. Install `@icon/entypo` with this command. In the <head> of your html, reference the location to your `entypo.css`.
+  1. Install `@icon/entypo` with this command. In the `<head>` of your html, reference the location to your `entypo.css`.
 
 ```
   <head>
@@ -55,7 +55,7 @@ There are many ways/formats of how to use entypo. The fastest and recommended wa
   </head>
 ```
 
-  Place entypo with <i> tag in your html like this. Icon class names are to be used with the `entypo` class prefix.
+> Place entypo with `<i>` tag in your html like this. Icon class names are to be used with the `entypo` class prefix.
 
 ```
   <i class="entypo entypo-note"></i>

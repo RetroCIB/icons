@@ -35,7 +35,7 @@ There are many ways/formats of how to use feather. The fastest and recommended w
 
 ### Icons font – ideal when you want to include all icons at once
 
-  1. Install `@icon/feather` with this command. In the <head> of your html, reference the location to your `feather.css`.
+  1. Install `@icon/feather` with this command. In the `<head>` of your html, reference the location to your `feather.css`.
 
 ```
   <head>
@@ -55,7 +55,7 @@ There are many ways/formats of how to use feather. The fastest and recommended w
   </head>
 ```
 
-  Place feather with <i> tag in your html like this. Icon class names are to be used with the `fe` class prefix.
+> Place feather with `<i>` tag in your html like this. Icon class names are to be used with the `fe` class prefix.
 
 ```
   <i class="fe fe-book"></i>

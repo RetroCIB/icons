@@ -35,7 +35,7 @@ There are many ways/formats of how to use dripicons. The fastest and recommended
 
 ### Icons font – ideal when you want to include all icons at once
 
-  1. Install `@icon/dripicons` with this command. In the <head> of your html, reference the location to your `dripicons.css`.
+  1. Install `@icon/dripicons` with this command. In the `<head>` of your html, reference the location to your `dripicons.css`.
 
 ```
   <head>
@@ -55,7 +55,7 @@ There are many ways/formats of how to use dripicons. The fastest and recommended
   </head>
 ```
 
-  Place dripicons with <i> tag in your html like this. Icon class names are to be used with the `dripicons` class prefix.
+> Place dripicons with `<i>` tag in your html like this. Icon class names are to be used with the `dripicons` class prefix.
 
 ```
   <i class="dripicons dripicons-alarm"></i>

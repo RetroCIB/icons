@@ -35,7 +35,7 @@ There are many ways/formats of how to use stroke-7. The fastest and recommended 
 
 ### Icons font – ideal when you want to include all icons at once
 
-  1. Install `@icon/stroke-7` with this command. In the <head> of your html, reference the location to your `stroke-7.css`.
+  1. Install `@icon/stroke-7` with this command. In the `<head>` of your html, reference the location to your `stroke-7.css`.
 
 ```
   <head>
@@ -55,7 +55,7 @@ There are many ways/formats of how to use stroke-7. The fastest and recommended 
   </head>
 ```
 
-  Place stroke-7 with <i> tag in your html like this. Icon class names are to be used with the `s7` class prefix.
+> Place stroke-7 with `<i>` tag in your html like this. Icon class names are to be used with the `s7` class prefix.
 
 ```
   <i class="s7 s7-album"></i>

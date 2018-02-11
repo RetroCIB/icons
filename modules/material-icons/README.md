@@ -35,7 +35,7 @@ There are many ways/formats of how to use material-icons. The fastest and recomm
 
 ### Icons font – ideal when you want to include all icons at once
 
-  1. Install `@icon/material-icons` with this command. In the <head> of your html, reference the location to your `material-icons.css`.
+  1. Install `@icon/material-icons` with this command. In the `<head>` of your html, reference the location to your `material-icons.css`.
 
 ```
   <head>
@@ -55,7 +55,7 @@ There are many ways/formats of how to use material-icons. The fastest and recomm
   </head>
 ```
 
-  Place material-icons with <i> tag in your html like this. Icon class names are to be used with the `zmdi` class prefix.
+> Place material-icons with `<i>` tag in your html like this. Icon class names are to be used with the `zmdi` class prefix.
 
 ```
   <i class="zmdi zmdi-airplane"></i>

@@ -35,7 +35,7 @@ There are many ways/formats of how to use linearicons. The fastest and recommend
 
 ### Icons font – ideal when you want to include all icons at once
 
-  1. Install `@icon/linearicons` with this command. In the <head> of your html, reference the location to your `linearicons.css`.
+  1. Install `@icon/linearicons` with this command. In the `<head>` of your html, reference the location to your `linearicons.css`.
 
 ```
   <head>
@@ -55,7 +55,7 @@ There are many ways/formats of how to use linearicons. The fastest and recommend
   </head>
 ```
 
-  Place linearicons with <i> tag in your html like this. Icon class names are to be used with the `lnr` class prefix.
+> Place linearicons with `<i>` tag in your html like this. Icon class names are to be used with the `lnr` class prefix.
 
 ```
   <i class="lnr lnr-home"></i>

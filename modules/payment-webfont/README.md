@@ -35,7 +35,7 @@ There are many ways/formats of how to use payment-webfont. The fastest and recom
 
 ### Icons font – ideal when you want to include all icons at once
 
-  1. Install `@icon/payment-webfont` with this command. In the <head> of your html, reference the location to your `payment-webfont.css`.
+  1. Install `@icon/payment-webfont` with this command. In the `<head>` of your html, reference the location to your `payment-webfont.css`.
 
 ```
   <head>
@@ -55,7 +55,7 @@ There are many ways/formats of how to use payment-webfont. The fastest and recom
   </head>
 ```
 
-  Place payment-webfont with <i> tag in your html like this. Icon class names are to be used with the `pw` class prefix.
+> Place payment-webfont with `<i>` tag in your html like this. Icon class names are to be used with the `pw` class prefix.
 
 ```
   <i class="pw pw-clickandbuy"></i>

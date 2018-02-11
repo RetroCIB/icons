@@ -35,7 +35,7 @@ There are many ways/formats of how to use web-icons. The fastest and recommended
 
 ### Icons font – ideal when you want to include all icons at once
 
-  1. Install `@icon/web-icons` with this command. In the <head> of your html, reference the location to your `web-icons.css`.
+  1. Install `@icon/web-icons` with this command. In the `<head>` of your html, reference the location to your `web-icons.css`.
 
 ```
   <head>
@@ -55,7 +55,7 @@ There are many ways/formats of how to use web-icons. The fastest and recommended
   </head>
 ```
 
-  Place web-icons with <i> tag in your html like this. Icon class names are to be used with the `wb` class prefix.
+> Place web-icons with `<i>` tag in your html like this. Icon class names are to be used with the `wb` class prefix.
 
 ```
   <i class="wb wb-inbox"></i>

@@ -35,7 +35,7 @@ There are many ways/formats of how to use micon. The fastest and recommended way
 
 ### Icons font – ideal when you want to include all icons at once
 
-  1. Install `@icon/micon` with this command. In the <head> of your html, reference the location to your `micon.css`.
+  1. Install `@icon/micon` with this command. In the `<head>` of your html, reference the location to your `micon.css`.
 
 ```
   <head>
@@ -55,7 +55,7 @@ There are many ways/formats of how to use micon. The fastest and recommended way
   </head>
 ```
 
-  Place micon with <i> tag in your html like this. Icon class names are to be used with the `mi` class prefix.
+> Place micon with `<i>` tag in your html like this. Icon class names are to be used with the `mi` class prefix.
 
 ```
   <i class="mi mi-Accept"></i>

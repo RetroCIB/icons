@@ -35,7 +35,7 @@ There are many ways/formats of how to use linea-ecommerce. The fastest and recom
 
 ### Icons font – ideal when you want to include all icons at once
 
-  1. Install `@icon/linea-ecommerce` with this command. In the <head> of your html, reference the location to your `linea-ecommerce.css`.
+  1. Install `@icon/linea-ecommerce` with this command. In the `<head>` of your html, reference the location to your `linea-ecommerce.css`.
 
 ```
   <head>
@@ -55,7 +55,7 @@ There are many ways/formats of how to use linea-ecommerce. The fastest and recom
   </head>
 ```
 
-  Place linea-ecommerce with <i> tag in your html like this. Icon class names are to be used with the `linea` class prefix.
+> Place linea-ecommerce with `<i>` tag in your html like this. Icon class names are to be used with the `linea` class prefix.
 
 ```
   <i class="linea linea-ecommerce-bag"></i>

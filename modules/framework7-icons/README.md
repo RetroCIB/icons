@@ -35,7 +35,7 @@ There are many ways/formats of how to use framework7-icons. The fastest and reco
 
 ### Icons font – ideal when you want to include all icons at once
 
-  1. Install `@icon/framework7-icons` with this command. In the <head> of your html, reference the location to your `framework7-icons.css`.
+  1. Install `@icon/framework7-icons` with this command. In the `<head>` of your html, reference the location to your `framework7-icons.css`.
 
 ```
   <head>
@@ -55,7 +55,7 @@ There are many ways/formats of how to use framework7-icons. The fastest and reco
   </head>
 ```
 
-  Place framework7-icons with <i> tag in your html like this. Icon class names are to be used with the `f7` class prefix.
+> Place framework7-icons with `<i>` tag in your html like this. Icon class names are to be used with the `f7` class prefix.
 
 ```
   <i class="f7 f7-add"></i>
