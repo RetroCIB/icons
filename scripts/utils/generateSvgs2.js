@@ -14,95 +14,51 @@ const extend = require('extend');
 const colors = require('colors');
 
 // getGlyphs
-function hexToDec(hex) {
-  return parseInt(hex, 16);
-}
-
-function getGlyphs(file) {
-  let SVG_FILE = require.resolve(file);
-
-  return readFile(SVG_FILE)
+function getAdvWidth(file) {
+  return readFile(file)
     .then(function(fontData) {
       return fontData.toString("utf-8");
     })
     .then(parseXml)
     .then(function(parsedXml) {
-      return parsedXml.svg.defs[0].font[0].glyph;
+      let advWidth = parsedXml.svg.defs[0].font[0].$['horiz-adv-x'];
+      return advWidth;
     })
-    .map(function(xmlGlyph) {
-      if (xmlGlyph.$.unicode) {
-        return {
-          data: xmlGlyph.$,
-          content: xmlGlyph.$.unicode.charCodeAt(0)
-        };
-      }
-    })
-    .then(function(fontData) {
-      return indexBy(fontData, "content");
-    });
+}
+
+function getGlyphs(file) {
+  let SVG_FILE = require.resolve(file);
+  return getAdvWidth(SVG_FILE).then(function(advWidth) {
+    return readFile(SVG_FILE)
+      .then(function(fontData) {
+        return fontData.toString("utf-8");
+      })
+      .then(parseXml)
+      .then(function(parsedXml) {
+        return parsedXml.svg.defs[0].font[0].glyph;
+      })
+      .map(function(xmlGlyph) {
+        if (xmlGlyph.$.unicode) {
+          return {
+            advWidth: xmlGlyph.$['horiz-adv-x'] || advWidth,
+            data: xmlGlyph.$,
+            content: xmlGlyph.$.unicode.charCodeAt(0)
+          };
+        }
+      })
+      .then(function(fontData) {
+        return indexBy(fontData, "content");
+      });
+  });
 }
 
 // generateSvg
-var PIXEL = 128;
-
-function optionsForSize(pixelWidth, pixelHeight, width, height, addPadding) {
-  var horizontalPadding = 0;
-  var verticalPadding = 0;
-
-  if(addPadding && width && height) {
-    var vPad = parseInt(height / pixelHeight)*pixelHeight;
-    var scaledHeight = (height / vPad)*pixelHeight;
-    
-    verticalPadding = scaledHeight - pixelHeight;
-    if(verticalPadding > 2) {
-      verticalPadding = 0;
-    }
-  }
-  
-  let paddingTop = (parseInt(verticalPadding / 2)) * PIXEL;
-  let paddingBottom = verticalPadding*PIXEL - paddingTop;
-      
-  let paddingLeft = 0;
-  let paddingRight = 0;
-
-  if(pixelWidth === pixelHeight) {
-    paddingLeft = paddingTop;
-    paddingRight = paddingBottom;
-  }
-  
-  return {
-    paddingTop,
-    paddingBottom,
-    paddingLeft,
-    paddingRight
-  };
-}
-
 function getIconSvg(params, size) {
-  let {path, color, advWidth} = params;
-  const PIXEL_WIDTH = advWidth > 2048 ? 18 : (advWidth > 1792 ? 16 : 14);
-  const PIXEL_HEIGHT = 14;
-  
-  const BASE_WIDTH = PIXEL_WIDTH * PIXEL;
-  const BASE_HEIGHT = PIXEL_HEIGHT * PIXEL;
-  
-  var options = optionsForSize(PIXEL_WIDTH, PIXEL_HEIGHT, 
-    parseInt((BASE_WIDTH / BASE_HEIGHT) * size), size,
-    params.addPadding);
-  let {paddingLeft, paddingTop, paddingRight, paddingBottom} = options;  
-  let shiftX = -(-(BASE_WIDTH - advWidth)/2 - paddingLeft);
-  let shiftY = -(-2*PIXEL - paddingTop);  
-  let width = BASE_WIDTH + paddingLeft + paddingRight;
-  let height = BASE_HEIGHT + paddingBottom + paddingTop;
-  
+  let {path, advWidth} = params;
   const result =
-`<svg width="${width}" height="${height}" viewBox="0 0 ${width} ${height}" xmlns="http://www.w3.org/2000/svg">
-  <g transform="translate(${shiftX} ${shiftY})">
-  <g transform="scale(1 -1) translate(0 -1280)">
-  <path d="${path}" fill="${color}" />
-  </g></g>
+`<svg width="${size}" height="${size}" viewBox="0 0 ${advWidth} ${advWidth}" xmlns="http://www.w3.org/2000/svg">
+  <path d="${path}" />
 </svg>`;
-
   return result;
 }
 
@@ -112,14 +68,13 @@ var svgo = new SVGO({
   }]
 });
 
-function generateSvg(name, params) {
+function generateSvg(name, params, size) {
   let svgFolder = pathModule.join(params.destFolder, 'icons');
   mkdirp.sync(svgFolder);
 
   return new Promise(function(resolve, reject) {
     var outSvg = fs.createWriteStream(pathModule.join(svgFolder, name + '.svg'));
-    svgo.optimize(getIconSvg(params)).then(function(result) {
-      outSvg.write('<?xml version="1.0" encoding="utf-8"?>' +'\n'); 
+    svgo.optimize(getIconSvg(params, size)).then(function(result) {
       outSvg.end(result.data);
       resolve();
     })
@@ -128,10 +83,11 @@ function generateSvg(name, params) {
 
 function generateIcon(params) {
   var name = params.name;
+  var size = params.size;
   console.log('Generating', name);
   var workChain = [];
   if (params.generateSvg) {
-    workChain.push(generateSvg(name, params));
+    workChain.push(generateSvg(name, params, size));
   }
   return Promise.all(workChain).then(function() {
     return {name: name}
@@ -149,12 +105,12 @@ module.exports = function(dest, filename, options) {
     let icons = new Array();
     for (let i in options.icons) {
       if (options.icons[i].content != undefined) {
-        // let str = options.icons[i].content.slice(1);
         for (let data in fontData) {
           if (fontData[data] != undefined) {
             if (options.icons[i].content == fontData[data].data.unicode) {
               icons.push({
                 name: options.icons[i].name,
+                advWidth: fontData[data].advWidth,
                 content: options.icons[i].content,
                 title: options.icons[i].title,
                 data: fontData[data].data
@@ -171,8 +127,9 @@ module.exports = function(dest, filename, options) {
     let iconConfigs = flatten(glyphs.map(function (glyph) {
       return extend(true, {}, {
         name: glyph.name,
-        advWidth: glyph.data['horiz-adv-x'] || 1536,
+        advWidth: glyph.advWidth,
         path: glyph.data.d,
+        size: 128,
         generateSvg: true,
         destFolder: dest
       });

@@ -14,10 +14,6 @@ const extend = require('extend');
 const colors = require('colors');
 
 // getGlyphs
-function hexToDec(hex) {
-  return parseInt(hex, 16);
-}
-
 function getAdvWidth(file) {
   return readFile(file)
     .then(function(fontData) {
@@ -44,7 +40,7 @@ function getGlyphs(file) {
       .map(function(xmlGlyph) {
         if (xmlGlyph.$.unicode) {
           return {
-            advWidth: advWidth,
+            advWidth: xmlGlyph.$['horiz-adv-x'] || advWidth,
             data: xmlGlyph.$,
             content: xmlGlyph.$.unicode.charCodeAt(0)
           };
@@ -60,9 +56,9 @@ function getGlyphs(file) {
 function getIconSvg(params, size) {
   let {path, advWidth} = params;
   const result =
-`<svg width="${size}" height="${size}" viewBox="0 0 ${advWidth} ${advWidth}" xmlns="http://www.w3.org/2000/svg">
-  <path d="${path}" />
-</svg>`;
+  `<svg width="${size}" height="${size}" viewBox="0 0 ${advWidth} ${advWidth}" xmlns="http://www.w3.org/2000/svg">
+    <path d="${path}" />
+  </svg>`;
   return result;
 }
 
@@ -102,6 +98,10 @@ function flatten(arr) {
   return arr.reduce(function(a, b) {
     return a.concat(b);
   }, []);
+}
+
+function hexToDec(hex) {
+  return parseInt(hex, 16);
 }
 
 module.exports = function(dest, filename, options) {
