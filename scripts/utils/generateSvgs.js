@@ -135,6 +135,7 @@ module.exports = function(dest, filename, options) {
         advWidth: glyph.advWidth,
         path: glyph.data.d,
         size: 128,
+        generateSvg: true,
         destFolder: dest
       });
     }));
