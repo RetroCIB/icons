@@ -134,7 +134,7 @@ module.exports = function(dest, filename, options) {
         name: glyph.name,
         advWidth: glyph.advWidth,
         path: glyph.data.d,
-        size: 128,
+        size: 64,
         generateSvg: true,
         destFolder: dest
       });
