@@ -14,7 +14,7 @@ const extend = require('extend');
 const colors = require('colors');
 
 // getGlyphs
-function getAdvWidth(file) {
+function getGlyph(file) {
   return readFile(file)
     .then(function(fontData) {
       return fontData.toString("utf-8");
@@ -22,13 +22,17 @@ function getAdvWidth(file) {
     .then(parseXml)
     .then(function(parsedXml) {
       let advWidth = parsedXml.svg.defs[0].font[0].$['horiz-adv-x'];
-      return advWidth;
+      let descent = parsedXml.svg.defs[0].font[0]['font-face'][0].$.descent;
+      return {
+        advWidth: advWidth,
+        descent: descent
+      };
     })
 }
 
 function getGlyphs(file) {
   let SVG_FILE = require.resolve(file);
-  return getAdvWidth(SVG_FILE).then(function(advWidth) {
+  return getGlyph(SVG_FILE).then(function(glyph) {
     return readFile(SVG_FILE)
       .then(function(fontData) {
         return fontData.toString("utf-8");
@@ -40,7 +44,8 @@ function getGlyphs(file) {
       .map(function(xmlGlyph) {
         if (xmlGlyph.$.unicode) {
           return {
-            advWidth: xmlGlyph.$['horiz-adv-x'] || advWidth,
+            advWidth: xmlGlyph.$['horiz-adv-x'] || glyph.advWidth,
+            descent: glyph.descent,
             data: xmlGlyph.$,
             content: xmlGlyph.$.unicode.charCodeAt(0)
           };
@@ -54,11 +59,15 @@ function getGlyphs(file) {
 
 // generateSvg
 function getIconSvg(params, size) {
-  let {path, advWidth} = params;
+  let {path, advWidth, descent} = params;
   const result =
-`<svg width="${size}" height="${size}" viewBox="0 0 ${advWidth} ${advWidth}" xmlns="http://www.w3.org/2000/svg">
-  <path d="${path}" />
-</svg>`;
+  `<svg width="${size}" height="${size}" viewBox="0 0 ${advWidth} ${advWidth}" xmlns="http://www.w3.org/2000/svg">
+    <g transform="translate(0 ${descent})">
+      <g transform="scale(1 -1) translate(0 -${advWidth})">
+        <path d="${path}" />
+      </g>
+    </g>
+  </svg>`;
   return result;
 }
 
@@ -86,9 +95,8 @@ function generateIcon(params) {
   var size = params.size;
   console.log('Generating', name);
   var workChain = [];
-  if (params.generateSvg) {
-    workChain.push(generateSvg(name, params, size));
-  }
+  workChain.push(generateSvg(name, params, size));
+  
   return Promise.all(workChain).then(function() {
     return {name: name}
   })
@@ -128,9 +136,9 @@ module.exports = function(dest, filename, options) {
       return extend(true, {}, {
         name: glyph.name,
         advWidth: glyph.advWidth,
+        descent: glyph.descent,
         path: glyph.data.d,
         size: 64,
-        generateSvg: true,
         destFolder: dest
       });
     }));
