@@ -19,5 +19,8 @@
   "devDependencies": {
     "caomei": "git+https://github.com/xiangsudian/CaoMei.git"
   },
-  "homepage": "http://chuangzaoshi.com/icon/"
+  "homepage": "http://chuangzaoshi.com/icon/",
+  "publishConfig": {
+    "access": "public"
+  }
 }
