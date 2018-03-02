@@ -16,5 +16,8 @@
     "icons",
     "icon"
   ],
-  "homepage": "http://hawcons.com/preview/"
+  "homepage": "http://hawcons.com/preview/",
+  "publishConfig": {
+    "access": "public"
+  }
 }

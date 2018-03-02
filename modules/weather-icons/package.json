@@ -16,5 +16,8 @@
     "icons",
     "icon"
   ],
-  "homepage": "http://erikflowers.github.io/weather-icons/"
+  "homepage": "http://erikflowers.github.io/weather-icons/",
+  "publishConfig": {
+    "access": "public"
+  }
 }

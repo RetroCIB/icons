@@ -16,5 +16,8 @@
     "icons",
     "icon"
   ],
-  "homepage": "http://www.gonzodesign.nl/gonzocons/"
+  "homepage": "http://www.gonzodesign.nl/gonzocons/",
+  "publishConfig": {
+    "access": "public"
+  }
 }

@@ -16,5 +16,8 @@
     "icons",
     "icon"
   ],
-  "homepage": "http://framework7.io/icons/"
+  "homepage": "http://framework7.io/icons/",
+  "publishConfig": {
+    "access": "public"
+  }
 }

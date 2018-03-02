@@ -19,5 +19,8 @@
   "devDependencies": {
     "linearicons": "^1.0.1"
   },
-  "homepage": "https://linearicons.com/free"
+  "homepage": "https://linearicons.com/free",
+  "publishConfig": {
+    "access": "public"
+  }
 }

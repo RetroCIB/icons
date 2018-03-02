@@ -16,5 +16,8 @@
     "icons",
     "icon"
   ],
-  "homepage": "http://www.linea.io/"
+  "homepage": "http://www.linea.io/",
+  "publishConfig": {
+    "access": "public"
+  }
 }

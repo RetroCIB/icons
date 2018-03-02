@@ -21,5 +21,8 @@
   "devDependencies": {
     "map-icons": "^3.0.3"
   },
-  "homepage": "https://github.com/scottdejonge/Map-Icons#readme"
+  "homepage": "https://github.com/scottdejonge/Map-Icons#readme",
+  "publishConfig": {
+    "access": "public"
+  }
 }

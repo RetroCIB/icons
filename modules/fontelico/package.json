@@ -16,5 +16,8 @@
     "icons",
     "icon"
   ],
-  "homepage": "http://fontello.github.io/fontelico.font/demo.html"
+  "homepage": "http://fontello.github.io/fontelico.font/demo.html",
+  "publishConfig": {
+    "access": "public"
+  }
 }

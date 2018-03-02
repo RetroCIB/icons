@@ -16,5 +16,8 @@
     "icons",
     "icon"
   ],
-  "homepage": "http://www.entypo.com"
+  "homepage": "http://www.entypo.com",
+  "publishConfig": {
+    "access": "public"
+  }
 }

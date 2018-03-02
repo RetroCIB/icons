@@ -16,5 +16,8 @@
     "icons",
     "icon"
   ],
-  "homepage": "http://themes-pixeden.com/font-demos/7-stroke/"
+  "homepage": "http://themes-pixeden.com/font-demos/7-stroke/",
+  "publishConfig": {
+    "access": "public"
+  }
 }

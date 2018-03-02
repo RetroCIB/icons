@@ -19,5 +19,8 @@
   "devDependencies": {
     "open-iconic": "^1.1.1"
   },
-  "homepage": "http://useiconic.com/open-iconic/"
+  "homepage": "http://useiconic.com/open-iconic/",
+  "publishConfig": {
+    "access": "public"
+  }
 }

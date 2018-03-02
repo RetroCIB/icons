@@ -16,5 +16,8 @@
     "icons",
     "icon"
   ],
-  "homepage": "http://developer.wordpress.org/resource/dashicons/"
+  "homepage": "http://developer.wordpress.org/resource/dashicons/",
+  "publishConfig": {
+    "access": "public"
+  }
 }

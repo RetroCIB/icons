@@ -16,5 +16,8 @@
     "icons",
     "icon"
   ],
-  "homepage": "http://themify.me/themify-icons"
+  "homepage": "http://themify.me/themify-icons",
+  "publishConfig": {
+    "access": "public"
+  }
 }

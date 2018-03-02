@@ -17,6 +17,8 @@ module.exports = function(dest, options, done) {
     author: `${options.author}`,
     homepage: `${options.homepage}`,
     license: `${options.license}`,
+    fontHeight: 128,
+    normalize: true,
     formats: ['svg', 'ttf', 'eot', 'woff', 'woff2'],
     glyphTransformFn: obj => {
       obj.name;

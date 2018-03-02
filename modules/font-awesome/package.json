@@ -19,5 +19,8 @@
   "devDependencies": {
     "font-awesome": "^4.7.0"
   },
-  "homepage": "http://fontawesome.io/"
+  "homepage": "http://fontawesome.io/",
+  "publishConfig": {
+    "access": "public"
+  }
 }

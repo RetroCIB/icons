@@ -19,5 +19,8 @@
   "devDependencies": {
     "feather-font": "git+ssh://git@github.com/AT-UI/feather-font.git"
   },
-  "homepage": "http://colebemis.com/feather/"
+  "homepage": "http://colebemis.com/feather/",
+  "publishConfig": {
+    "access": "public"
+  }
 }

@@ -16,5 +16,8 @@
     "icons",
     "icon"
   ],
-  "homepage": "https://github.com/amitjakhu/dripicons"
+  "homepage": "https://github.com/amitjakhu/dripicons",
+  "publishConfig": {
+    "access": "public"
+  }
 }
