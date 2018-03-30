@@ -1,7 +1,7 @@
 {
-  "version": "1.0.0-0",
+  "version": "1.0.1",
   "name": "@icon/fontelico",
-  "description": "TODO: fill in this description later",
+  "description": "Fontello project",
   "author": "Crowdsourced, for Fontello project",
   "license": "SIL",
   "repository": "https://github.com/thecreation/icons/tree/master/modules/fontelico",

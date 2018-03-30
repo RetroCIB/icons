@@ -32,6 +32,8 @@ module.exports = function(dest, options, done) {
     fs.writeFileSync(`${dest}/${options.name}.woff`, new Buffer(result.woff));
     fs.writeFileSync(`${dest}/${options.name}.woff2`, new Buffer(result.woff2));
     console.log(colors.green('Icon generated.'));
-    done();
+    if (done) {
+      done();
+    }
   })
 }

@@ -1,7 +1,7 @@
 {
-  "version": "2.0.1-0",
+  "version": "2.0.2",
   "name": "@icon/gonzocons",
-  "description": "TODO: fill in this description later",
+  "description": "An Icon Font designed by Jan Rajtoral, gonzodesign.nl",
   "author": "Jan Rajtoral",
   "license": "CC-BY-3.0",
   "repository": "https://github.com/thecreation/icons/tree/master/modules/gonzocons",
